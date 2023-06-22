@@ -2,7 +2,9 @@
 
 namespace App\Http\Services;
 
+use App\Http\Helpers\DbHelper;
 use App\Providers\Api\PoaProvider;
+use Illuminate\Http\Request;
 
 class PoaService
 {
@@ -45,6 +47,36 @@ class PoaService
                 $coSignFirstName,
                 $coSignLastName,
             ];
+            
+            $request = new Request();
+            $Token = $request->header("Token");
+            $userData = DbHelper::callProcedure("getUser", [$Token, $userIdentifier]);
+            $user = $userData[0];
+            $hasCoSigner = "";
+            if (isset($user['corporate']) && isset($user['corporatetype'])) {
+                $hasCoSigner = $user['corporate'] == 2 || $user['corporatetype'] == 4;
+            }
+            $hasWitness = $user['status'] == 3 && $user['corporate'] == 2;
+
+            if ($hasWitness) {
+                DbHelper::callProcedure("createSigner", [
+                    $userIdentifier,
+                    $witnessFirstName,
+                    $witnessLastName,
+                    $witnessEmail,
+                    'witness']
+                );
+            }
+            if ($hasCoSigner) {
+                DbHelper::callProcedure("createSigner", [
+                    $userIdentifier,
+                    $coSignFirstName,
+                    $coSignLastName,
+                    $coSignEmail,
+                    'Officer_2']
+                );
+            }
+
             return PoaProvider::poaRequest($params);
         } catch (\Exception $th) {
             return response()->json(['error' => '!!! No Data Found !!! Try Again!'], 401);
