@@ -2,11 +2,15 @@
 
 namespace App\Http\Services;
 
+use App\Core\Model\Core;
+use App\Mail\sendEmailFreightosLink;
 use App\Providers\Api\TicketProvider;
+use Illuminate\Support\Facades\Mail;
 
 class TicketService
 {
-    public static function createTicket(array $data) {
+    public static function createTicket(array $data)
+    {
         try {
             $transport = $data["transport"];
             $userIdentifier = $data["userIdentifier"];
@@ -31,13 +35,25 @@ class TicketService
                 $deliveryAddress,
                 $affiliateReference
             ];
-            return TicketProvider::createTicket($params); 
+
+            $emailConfig = Core::getEmailConfig();
+            $email = $emailConfig->ticketsEmail;
+            if ($email) {
+                $variables['info_email'] = $emailConfig->emailMain;
+                $fromEmail = $emailConfig->freightosEmail;
+                $freightosRef = empty($variables['freightosRef']) ? '' : $variables['freightosRef'];
+                $msg = new sendEmailFreightosLink($fromEmail);
+
+            }
+            Mail::to($email)->send($msg);
+            return TicketProvider::createTicket($params);
         } catch (\Exception $th) {
             return response()->json(['error' => '!!! No Data Found !!! Try Again!'], 401);
         }
     }
 
-    public static function getDocumentUploadType(array $data) {
+    public static function getDocumentUploadType(array $data)
+    {
         try {
             $transport = $data["transport"];
 
@@ -51,8 +67,9 @@ class TicketService
             return response()->json(['error' => '!!! No Data Found !!! Try Again!'], 401);
         }
     }
-    
-    public static function attachTicketDocument(array $data) {
+
+    public static function attachTicketDocument(array $data)
+    {
         try {
             $file = $data["file"];
             $ticketIdentifier = $data["ticketIdentifier"];
@@ -78,7 +95,8 @@ class TicketService
         }
     }
 
-    public static function createSoldTo(array $data) {
+    public static function createSoldTo(array $data)
+    {
         try {
             $userIdentifier = $data["userIdentifier"];
             $firstname = $data["firstname"];
@@ -117,7 +135,8 @@ class TicketService
         }
     }
 
-    public static function createVendor(array $data) {
+    public static function createVendor(array $data)
+    {
         try {
             $userIdentifier = $data["userIdentifier"];
             $name = $data["name"];
@@ -154,7 +173,8 @@ class TicketService
         }
     }
 
-    public static function getSoldToList(array $data) {
+    public static function getSoldToList(array $data)
+    {
         try {
             $userIdentifier = $data["userIdentifier"];
             $pageNumber = $data["pageNumber"];
@@ -171,7 +191,8 @@ class TicketService
         }
     }
 
-    public static function getTicketByAffiliateReference(array $data) {
+    public static function getTicketByAffiliateReference(array $data)
+    {
         try {
             $affiliateReference = $data["affiliateReference"];
 
@@ -186,14 +207,20 @@ class TicketService
         }
     }
 
-    public static function getVendorList($data) {
+    public static function getVendorList($data)
+    {
         try {
             $userIdentifier = $data["userIdentifier"];
             $pageNumber = $data["pageNumber"];
 
+            if ($pageNumber <= 0) {
+                $pageNumber = 1;
+            }
+            $offset = ($pageNumber - 1) * 50;
+
             $params = [
                 $userIdentifier,
-                $pageNumber
+                $$offset
             ];
             $result = TicketProvider::getVendorList($params);
 
@@ -203,14 +230,20 @@ class TicketService
         }
     }
 
-    public static function getCustomerTickets($data) {
+    public static function getCustomerTickets($data)
+    {
         try {
             $userId = $data["userId"];
             $pageNumber = $data["pageNumber"];
 
+            if ($pageNumber <= 0) {
+                $pageNumber = 1;
+            }
+            $offset = ($pageNumber - 1) * 50;
+
             $params = [
                 $userId,
-                $pageNumber
+                $offset
             ];
             $result = TicketProvider::getCustomerTickets($params);
 
@@ -220,14 +253,20 @@ class TicketService
         }
     }
 
-    public static function getTicketInformation($data) {
+    public static function getTicketInformation($data)
+    {
         try {
             $userId = $data["userId"];
             $pageNumber = $data["pageNumber"];
 
+            if ($pageNumber <= 0) {
+                $pageNumber = 1;
+            }
+            $offset = ($pageNumber - 1) * 50;
+
             $params = [
                 $userId,
-                $pageNumber
+                $offset
             ];
             $result = TicketProvider::getTicketInformation($params);
 
@@ -237,14 +276,20 @@ class TicketService
         }
     }
 
-    public static function getChatMessages($data) {
+    public static function getChatMessages($data)
+    {
         try {
             $ticketGuid = $data["ticketGuid"];
             $pageNumber = $data["pageNumber"];
 
+            if ($pageNumber <= 0) {
+                $pageNumber = 1;
+            }
+            $offset = ($pageNumber - 1) * 50;
+
             $params = [
                 $ticketGuid,
-                $pageNumber
+                $offset
             ];
             $result = TicketProvider::getChatMessages($params);
 
@@ -254,7 +299,8 @@ class TicketService
         }
     }
 
-    public static function createChatMessage($data) {
+    public static function createChatMessage($data)
+    {
         try {
             $ticketGuid = $data["ticketGuid"];
             $message = $data["message"];
