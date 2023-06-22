@@ -3,8 +3,10 @@
 namespace App\Http\Services;
 
 use App\Http\Helpers\DbHelper;
+use App\Mail\createUser;
 use App\Providers\Api\UserProvider;
 use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Mail;
 
 class UserService
 {
@@ -45,6 +47,16 @@ class UserService
             $jurisdictionState = $data["jurisdictionState"];
             $verificationUserId = $data["verificationUserId"];
             $registrationIP = $data["registrationIP"];
+            $isBondRequested = null;
+
+            if ($bondType == 2) {
+                $isBondRequested = 1;
+            }
+
+            $bondExpireDate = '';
+            if ($bondExpirationYear && $bondExpirationMonth && $bondExpirationDay) {
+                $bondExpireDate = $bondExpirationYear . '-' . $bondExpirationMonth . '-' . $bondExpirationDay;
+            }
 
             $currentDateTime = Date::now()->format('Y-m-d H:i:s');
             $token = sha1($email . $password . $currentDateTime);
@@ -73,10 +85,9 @@ class UserService
                 $birthDate,
                 $haveBond,
                 $bondReferenceNumber,
-                $bondExpirationYear,
-                $bondExpirationMonth,
-                $bondExpirationDay,
+                $bondExpireDate,
                 $bondType,
+                $isBondRequested,
                 $affiliateReference,
                 $affiliateShipmentNumber,
                 $createdByUserId,
@@ -86,6 +97,10 @@ class UserService
                 $isActive,
                 $token,
             ];
+
+            $mail = new createUser($firstname, $lastname, $email);
+            Mail::to($email)->send($mail);
+
             return UserProvider::createUser($params);
         } catch (\Exception $th) {
             return response()->json(['error' => '!!! No Data Found !!! Try Again!'], 401);
@@ -126,6 +141,16 @@ class UserService
             $verificationUserId = $data["verificationUserId"];
             $registrationIP = $data["registrationIP"];
 
+
+            if ($bondType == 2) {
+                $isBondRequested = 1;
+            }
+
+            $bondExpireDate = '';
+            if ($bondExpirationYear && $bondExpirationMonth && $bondExpirationDay) {
+                $bondExpireDate = $bondExpirationYear . '-' . $bondExpirationMonth . '-' . $bondExpirationDay;
+            }
+
             $params = [
                 $email,
                 $accountType,
@@ -147,9 +172,7 @@ class UserService
                 $birthDate,
                 $haveBond,
                 $bondReferenceNumber,
-                $bondExpirationYear,
-                $bondExpirationMonth,
-                $bondExpirationDay,
+                $bondExpireDate,
                 $bondType,
                 $affiliateReference,
                 $affiliateShipmentNumber,
