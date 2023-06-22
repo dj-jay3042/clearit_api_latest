@@ -2,12 +2,9 @@
 
 namespace App\Core\Model;
 
-use App\Core\Helper\LogHelper;
-use App\Http\EmailConfig;
-use App\Http\MailChimpConfig;
-use App\Core\Structure\RightSignatureConfig;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use App\Http\Config\EmailConfig;
+use App\Http\Config\MailChimpConfig;
+use App\Http\Config\RightSignatureConfig;
 
 class Core
 {
