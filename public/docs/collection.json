@@ -1,0 +1,991 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/127.0.0.1:8000"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "52350948-cbfc-4090-b670-f0ba1e27f1bb",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "POST api\/data\/getToken",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/getToken",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/getToken"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"matt10@example.net\",\"password\":\"7zY'KrR\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/createUser",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/createUser",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/createUser"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"ashtyn.runolfsson@example.net\",\"firstname\":\"perferendis\",\"lastname\":\"et\",\"company\":\"non\",\"accountType\":12,\"businessStructureType\":14,\"signingOfficerType\":3,\"legalBusinessName\":\"esse\",\"tradeName\":\"inventore\",\"importerNumber\":\"voluptate\",\"streetAddress\":\"sit\",\"city\":\"quo\",\"country\":\"dicta\",\"stateIdentifier\":\"ad\",\"postalCode\":\"et\",\"contactFirstName\":\"officia\",\"contactLastName\":\"facere\",\"phoneNumber\":\"ifwvawaoei\",\"faxNumber\":\"adipisci\",\"birthDate\":\"2023-06-13\",\"haveBond\":13,\"bondReferenceNumber\":\"quae\",\"bondExpirationYear\":\"evor\",\"bondExpirationMonth\":\"ft\",\"bondExpirationDay\":\"al\",\"bondType\":20,\"affiliateReference\":\"tenetur\",\"affiliateShipmentNumber\":\"velit\",\"createdByUserId\":7,\"jurisdictionState\":\"tempora\",\"verificationUserId\":20,\"registrationIP\":\"sed\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/updateUser",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/updateUser",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/updateUser"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"thora58@example.org\",\"accountType\":3,\"businessStructureType\":12,\"signingOfficerType\":19,\"legalBusinessName\":\"distinctio\",\"tradeName\":\"minus\",\"importerNumber\":\"omnis\",\"streetAddress\":\"reprehenderit\",\"city\":\"repellat\",\"country\":\"enim\",\"stateIdentifier\":\"quaerat\",\"postalCode\":\"sint\",\"contactFirstName\":\"sit\",\"contactLastName\":\"eos\",\"phoneNumber\":\"enytvaukyi\",\"faxNumber\":\"in\",\"birthDate\":\"2023-06-13\",\"haveBond\":2,\"bondReferenceNumber\":\"nulla\",\"bondExpirationYear\":\"yiqg\",\"bondExpirationMonth\":\"tj\",\"bondExpirationDay\":\"iy\",\"bondType\":9,\"affiliateReference\":\"minus\",\"affiliateShipmentNumber\":\"eum\",\"createdByUserId\":18,\"jurisdictionState\":\"quia\",\"verificationUserId\":14}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/createTicket",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/createTicket",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/createTicket"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"transport\":9,\"userIdentifier\":\"veritatis\",\"soldToId\":9,\"vendorId\":20,\"carrier\":\"et\",\"trackingNumber\":\"est\",\"requiresDelivery\":5,\"deliverySelection\":4,\"deliveryAddress\":\"explicabo\",\"affiliateReference\":\"est\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/attachTicketDocument",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/attachTicketDocument",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/attachTicketDocument"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "ticketIdentifier",
+                                    "value": "est",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "documentType",
+                                    "value": "quas",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "documentDescription",
+                                    "value": "magnam",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "invoiceNumber",
+                                    "value": "explicabo",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "supplierName",
+                                    "value": "aut",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "affiliateReference",
+                                    "value": "consequuntur",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "file",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/createSoldTo",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/createSoldTo",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/createSoldTo"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"userIdentifier\":\"excepturi\",\"firstname\":\"nobis\",\"lastname\":\"placeat\",\"legalBusinessName\":\"atque\",\"streetAddress\":\"a\",\"city\":\"qui\",\"country\":\"sed\",\"stateIdentifier\":\"nostrum\",\"postalCode\":\"modi\",\"phoneNumber\":\"ea\",\"faxNumber\":\"et\",\"importerNumber\":\"ut\",\"email\":\"judah.bradtke@example.com\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/createVendor",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/createVendor",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/createVendor"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"userIdentifier\":\"porro\",\"name\":\"eligendi\",\"address\":\"nesciunt\",\"city\":\"expedita\",\"stateIdentifier\":\"quia\",\"country\":\"cum\",\"postalCode\":\"qui\",\"carrierRef\":\"et\",\"phoneNumber\":\"saepe\",\"fax\":\"voluptates\",\"email\":\"scottie.luettgen@example.org\",\"contactName\":\"modi\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/getSoldToList",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/getSoldToList",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/getSoldToList"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"userIdentifier\":\"deleniti\",\"pageNumber\":15}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/getTicketByAffiliateReference",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/getTicketByAffiliateReference",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/getTicketByAffiliateReference"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"affiliateReference\":\"vitae\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/getVendorList",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/getVendorList",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/getVendorList"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"userIdentifier\":\"quas\",\"pageNumber\":15}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/getDocumentUploadTypes",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/getDocumentUploadTypes",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/getDocumentUploadTypes"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"transport\":14}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/getUser",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/getUser",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/getUser"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"userIdentifier\":\"velit\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/poaRequest",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/poaRequest",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/poaRequest"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"userIdentifier\":\"corrupti\",\"signEmail\":\"malachi.ryan@example.net\",\"signFirstName\":\"ratione\",\"signLastName\":\"quia\",\"signAddress\":\"et\",\"signCity\":\"nobis\",\"signState\":\"est\",\"signZip\":\"sit\",\"signTaxid\":\"quia\",\"signBusname\":\"omnis\",\"signTradename\":\"enim\",\"witnessEmail\":\"hiram.crona@example.com\",\"witnessFirstName\":\"qui\",\"witnessLastName\":\"provident\",\"coSignEmail\\t\":\"explicabo\",\"coSignFirstName\":\"provident\",\"coSignLastName\":\"possimus\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/getCustomerTickets",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/getCustomerTickets",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/getCustomerTickets"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"userId\":15,\"pageNumber\":16}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/getTicketInformation",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/getTicketInformation",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/getTicketInformation"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"userId\":9,\"pageNumber\":13}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/createUserBondApplication",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/createUserBondApplication",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/createUserBondApplication"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"userIdentifier\":\"laborum\",\"firstname\":\"aut\",\"lastname\":\"aut\",\"phone\":\"cupiditate\",\"busname\":\"delectus\",\"tradename\":\"adipisci\",\"yearsInBusiness\":18,\"physicalAddress\":\"veritatis\",\"physicalCity\":\"dolorem\",\"physicalCountry\":\"ut\",\"physicalState\":\"cum\",\"physicalZip\":\"voluptas\",\"mailingAddress\":\"quia\",\"mailingCity\":\"fuga\",\"mailingCountry\":\"ullam\",\"mailingState\":\"accusamus\",\"mailingZip\":\"fugiat\",\"isBondOnFile\":10,\"isTerminationSent\":14,\"terminationDate\":\"2023-06-13\",\"hasSuretyLoss\":14,\"hasPrincipalSanctions\":9,\"merchandiseDesc\":\"fuga\",\"manufacturerCountries\":\"nisi\",\"hasCountervailingDuties\":3,\"requireReconciliationRider\":4,\"valueMerchandiseImportedLast12Months\":16,\"estimatedTaxesLast12Months\":14,\"numberOfEntriesLast12Months\":5,\"valueMerchandiseImportedNext12Months\":9,\"estimatedTaxesNext12Months\":6,\"numberOfEntriesNext12Months\":2}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/saveUserBondReference",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/saveUserBondReference",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/saveUserBondReference"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"userId\":7,\"bondReferenceNumber\":\"eum\",\"bondExpiration\":\"2023-06-13\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/attachUserDocument",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/attachUserDocument",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/attachUserDocument"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "userIdentifier",
+                                    "value": "laboriosam",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "documentDescription",
+                                    "value": "laboriosam",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "file",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/getImportEstimate",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/getImportEstimate",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/getImportEstimate"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"shipping_method\":10,\"shipment_value\":\"l\",\"hts_code\":\"facilis\",\"quantity\":7,\"bond_type\":\"occaecati\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/getEstimate",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/getEstimate",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/getEstimate"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"estimateGuid\":\"perferendis\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/lookupHTSCode",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/lookupHTSCode",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/lookupHTSCode"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"hts_code\":\"dicta\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/searchHTSCode",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/searchHTSCode",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/searchHTSCode"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"search\":\"qui\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/getHTSCodeRequirement",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/getHTSCodeRequirement",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/getHTSCodeRequirement"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"hts_code\":\"beatae\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/poaReset",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/poaReset",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/poaReset"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"userIdentifier\":\"suscipit\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/saveAffiliatePoa",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/saveAffiliatePoa",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/saveAffiliatePoa"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"queryString\":\"voluptas\",\"affiliateUserIdentifier\":\"est\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/data\/updateAffiliatePoa",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/data\/updateAffiliatePoa",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/data\/updateAffiliatePoa"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Token",
+                                "value": "string required"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"AffiliatePoaLogId\":19,\"Response\":\"cupiditate\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

@@ -1,0 +1,1477 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://127.0.0.1:8000'
+paths:
+  /api/data/getToken:
+    post:
+      summary: ''
+      operationId: postApiDataGetToken
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: matt10@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: "7zY'KrR"
+              required:
+                - email
+                - password
+      security: []
+  /api/data/createUser:
+    post:
+      summary: ''
+      operationId: postApiDataCreateUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: ashtyn.runolfsson@example.net
+                firstname:
+                  type: string
+                  description: ''
+                  example: perferendis
+                lastname:
+                  type: string
+                  description: ''
+                  example: et
+                company:
+                  type: string
+                  description: ''
+                  example: non
+                accountType:
+                  type: integer
+                  description: 'Account type:<br/>1 - Presonal <br/> 2 - Business <br/> 3 - NRI'
+                  example: 12
+                businessStructureType:
+                  type: integer
+                  description: 'Business Structure Type:<br/>1 - Corporation <br/> 2 - Sole Proprietorship <br/> 3 - LLC <br/> 4 - Partnership'
+                  example: 14
+                signingOfficerType:
+                  type: integer
+                  description: 'Signing officer type:<br/>1 - Single signing officer<br/> 2 - Co-signing officer'
+                  example: 3
+                legalBusinessName:
+                  type: string
+                  description: ''
+                  example: esse
+                tradeName:
+                  type: string
+                  description: ''
+                  example: inventore
+                importerNumber:
+                  type: string
+                  description: ''
+                  example: voluptate
+                streetAddress:
+                  type: string
+                  description: ''
+                  example: sit
+                city:
+                  type: string
+                  description: ''
+                  example: quo
+                country:
+                  type: string
+                  description: ''
+                  example: dicta
+                stateIdentifier:
+                  type: string
+                  description: ''
+                  example: ad
+                postalCode:
+                  type: string
+                  description: ''
+                  example: et
+                contactFirstName:
+                  type: string
+                  description: ''
+                  example: officia
+                contactLastName:
+                  type: string
+                  description: ''
+                  example: facere
+                phoneNumber:
+                  type: string
+                  description: 'Must be 10 characters.'
+                  example: ifwvawaoei
+                faxNumber:
+                  type: string
+                  description: ''
+                  example: adipisci
+                birthDate:
+                  type: string
+                  description: 'Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+                  example: '2023-06-13'
+                haveBond:
+                  type: integer
+                  description: 'Does the user have a bond<br/>1 - Yes <br/> 0 - No'
+                  example: 13
+                bondReferenceNumber:
+                  type: string
+                  description: ''
+                  example: quae
+                bondExpirationYear:
+                  type: string
+                  description: 'Must be 4 characters.'
+                  example: evor
+                bondExpirationMonth:
+                  type: string
+                  description: 'Must be 2 characters.'
+                  example: ft
+                bondExpirationDay:
+                  type: string
+                  description: 'Must be 2 characters.'
+                  example: al
+                bondType:
+                  type: integer
+                  description: 'Bond type:<br/> 1 - Single entry<br/> 2 - Annual'
+                  example: 20
+                affiliateReference:
+                  type: string
+                  description: ''
+                  example: tenetur
+                affiliateShipmentNumber:
+                  type: string
+                  description: ''
+                  example: velit
+                createdByUserId:
+                  type: integer
+                  description: ''
+                  example: 7
+                jurisdictionState:
+                  type: string
+                  description: ''
+                  example: tempora
+                verificationUserId:
+                  type: integer
+                  description: ''
+                  example: 20
+                registrationIP:
+                  type: string
+                  description: ''
+                  example: sed
+              required:
+                - email
+                - firstname
+                - lastname
+                - company
+                - accountType
+                - streetAddress
+                - city
+                - country
+                - stateIdentifier
+                - postalCode
+                - contactFirstName
+                - contactLastName
+                - phoneNumber
+                - birthDate
+                - haveBond
+  /api/data/updateUser:
+    post:
+      summary: ''
+      operationId: postApiDataUpdateUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: thora58@example.org
+                accountType:
+                  type: integer
+                  description: 'Account type:<br/>1 - Presonal <br/> 2 - Business <br/> 3 - NRI'
+                  example: 3
+                businessStructureType:
+                  type: integer
+                  description: 'Business Structure Type:<br/>1 - Corporation <br/> 2 - Sole Proprietorship <br/> 3 - LLC <br/> 4 - Partnership'
+                  example: 12
+                signingOfficerType:
+                  type: integer
+                  description: 'Signing officer type:<br/>1 - Single signing officer<br/> 2 - Co-signing officer'
+                  example: 19
+                legalBusinessName:
+                  type: string
+                  description: ''
+                  example: distinctio
+                tradeName:
+                  type: string
+                  description: ''
+                  example: minus
+                importerNumber:
+                  type: string
+                  description: ''
+                  example: omnis
+                streetAddress:
+                  type: string
+                  description: ''
+                  example: reprehenderit
+                city:
+                  type: string
+                  description: ''
+                  example: repellat
+                country:
+                  type: string
+                  description: ''
+                  example: enim
+                stateIdentifier:
+                  type: string
+                  description: ''
+                  example: quaerat
+                postalCode:
+                  type: string
+                  description: ''
+                  example: sint
+                contactFirstName:
+                  type: string
+                  description: ''
+                  example: sit
+                contactLastName:
+                  type: string
+                  description: ''
+                  example: eos
+                phoneNumber:
+                  type: string
+                  description: 'Must be 10 characters.'
+                  example: enytvaukyi
+                faxNumber:
+                  type: string
+                  description: ''
+                  example: in
+                birthDate:
+                  type: string
+                  description: 'Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+                  example: '2023-06-13'
+                haveBond:
+                  type: integer
+                  description: 'Does the user have a bond<br/>1 - Yes <br/> 0 - No'
+                  example: 2
+                bondReferenceNumber:
+                  type: string
+                  description: ''
+                  example: nulla
+                bondExpirationYear:
+                  type: string
+                  description: 'Must be 4 characters.'
+                  example: yiqg
+                bondExpirationMonth:
+                  type: string
+                  description: 'Must be 2 characters.'
+                  example: tj
+                bondExpirationDay:
+                  type: string
+                  description: 'Must be 2 characters.'
+                  example: iy
+                bondType:
+                  type: integer
+                  description: 'Bond type:<br/> 1 - Single entry<br/> 2 - Annual'
+                  example: 9
+                affiliateReference:
+                  type: string
+                  description: ''
+                  example: minus
+                affiliateShipmentNumber:
+                  type: string
+                  description: ''
+                  example: eum
+                createdByUserId:
+                  type: integer
+                  description: ''
+                  example: 18
+                jurisdictionState:
+                  type: string
+                  description: ''
+                  example: quia
+                verificationUserId:
+                  type: integer
+                  description: ''
+                  example: 14
+              required:
+                - email
+                - accountType
+                - streetAddress
+                - city
+                - country
+                - stateIdentifier
+                - postalCode
+                - contactFirstName
+                - contactLastName
+                - phoneNumber
+                - birthDate
+                - haveBond
+      security: []
+  /api/data/createTicket:
+    post:
+      summary: ''
+      operationId: postApiDataCreateTicket
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transport:
+                  type: integer
+                  description: 'Transport:<br/>1 - Truck <br/> 2 - Ocean <br/> 3 - Air <br/> 4 - Courier'
+                  example: 9
+                userIdentifier:
+                  type: string
+                  description: ''
+                  example: veritatis
+                soldToId:
+                  type: integer
+                  description: ''
+                  example: 9
+                vendorId:
+                  type: integer
+                  description: ''
+                  example: 20
+                carrier:
+                  type: string
+                  description: ''
+                  example: et
+                trackingNumber:
+                  type: string
+                  description: ''
+                  example: est
+                requiresDelivery:
+                  type: integer
+                  description: 'Requires delivery:<br/>1 - Yes <br/>0 - No'
+                  example: 5
+                deliverySelection:
+                  type: integer
+                  description: 'Delivery selection:<br/>1 - Commercial <br/>2 - Residential <br/>3 - Amazon'
+                  example: 4
+                deliveryAddress:
+                  type: string
+                  description: ''
+                  example: explicabo
+                affiliateReference:
+                  type: string
+                  description: ''
+                  example: est
+              required:
+                - transport
+                - userIdentifier
+                - soldToId
+                - vendorId
+                - requiresDelivery
+                - deliverySelection
+      security: []
+  /api/data/attachTicketDocument:
+    post:
+      summary: ''
+      operationId: postApiDataAttachTicketDocument
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: 'Must be a file.'
+                ticketIdentifier:
+                  type: string
+                  description: ''
+                  example: est
+                documentType:
+                  type: string
+                  description: ''
+                  example: quas
+                documentDescription:
+                  type: string
+                  description: ''
+                  example: magnam
+                invoiceNumber:
+                  type: string
+                  description: ''
+                  example: explicabo
+                supplierName:
+                  type: string
+                  description: ''
+                  example: aut
+                affiliateReference:
+                  type: string
+                  description: ''
+                  example: consequuntur
+              required:
+                - file
+                - ticketIdentifier
+                - documentType
+      security: []
+  /api/data/createSoldTo:
+    post:
+      summary: ''
+      operationId: postApiDataCreateSoldTo
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userIdentifier:
+                  type: string
+                  description: ''
+                  example: excepturi
+                firstname:
+                  type: string
+                  description: ''
+                  example: nobis
+                lastname:
+                  type: string
+                  description: ''
+                  example: placeat
+                legalBusinessName:
+                  type: string
+                  description: ''
+                  example: atque
+                streetAddress:
+                  type: string
+                  description: ''
+                  example: a
+                city:
+                  type: string
+                  description: ''
+                  example: qui
+                country:
+                  type: string
+                  description: ''
+                  example: sed
+                stateIdentifier:
+                  type: string
+                  description: ''
+                  example: nostrum
+                postalCode:
+                  type: string
+                  description: ''
+                  example: modi
+                phoneNumber:
+                  type: string
+                  description: ''
+                  example: ea
+                faxNumber:
+                  type: string
+                  description: ''
+                  example: et
+                importerNumber:
+                  type: string
+                  description: ''
+                  example: ut
+                email:
+                  type: string
+                  description: ''
+                  example: judah.bradtke@example.com
+              required:
+                - userIdentifier
+                - firstname
+                - lastname
+                - streetAddress
+                - city
+                - country
+                - stateIdentifier
+                - postalCode
+                - phoneNumber
+      security: []
+  /api/data/createVendor:
+    post:
+      summary: ''
+      operationId: postApiDataCreateVendor
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userIdentifier:
+                  type: string
+                  description: ''
+                  example: porro
+                name:
+                  type: string
+                  description: ''
+                  example: eligendi
+                address:
+                  type: string
+                  description: ''
+                  example: nesciunt
+                city:
+                  type: string
+                  description: ''
+                  example: expedita
+                stateIdentifier:
+                  type: string
+                  description: ''
+                  example: quia
+                country:
+                  type: string
+                  description: ''
+                  example: cum
+                postalCode:
+                  type: string
+                  description: ''
+                  example: qui
+                carrierRef:
+                  type: string
+                  description: ''
+                  example: et
+                phoneNumber:
+                  type: string
+                  description: ''
+                  example: saepe
+                fax:
+                  type: string
+                  description: ''
+                  example: voluptates
+                email:
+                  type: string
+                  description: ''
+                  example: scottie.luettgen@example.org
+                contactName:
+                  type: string
+                  description: ''
+                  example: modi
+              required:
+                - userIdentifier
+                - name
+                - address
+                - city
+                - stateIdentifier
+                - country
+                - phoneNumber
+      security: []
+  /api/data/getSoldToList:
+    post:
+      summary: ''
+      operationId: postApiDataGetSoldToList
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userIdentifier:
+                  type: string
+                  description: ''
+                  example: deleniti
+                pageNumber:
+                  type: integer
+                  description: ''
+                  example: 15
+              required:
+                - userIdentifier
+      security: []
+  /api/data/getTicketByAffiliateReference:
+    post:
+      summary: ''
+      operationId: postApiDataGetTicketByAffiliateReference
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                affiliateReference:
+                  type: string
+                  description: ''
+                  example: vitae
+      security: []
+  /api/data/getVendorList:
+    post:
+      summary: ''
+      operationId: postApiDataGetVendorList
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userIdentifier:
+                  type: string
+                  description: ''
+                  example: quas
+                pageNumber:
+                  type: integer
+                  description: ''
+                  example: 15
+              required:
+                - userIdentifier
+      security: []
+  /api/data/getDocumentUploadTypes:
+    post:
+      summary: ''
+      operationId: postApiDataGetDocumentUploadTypes
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transport:
+                  type: integer
+                  description: 'Transport:<br/>1 - Truck <br/> 2 - Ocean <br/> 3 - Air <br/> 4 - Courier'
+                  example: 14
+              required:
+                - transport
+      security: []
+  /api/data/getUser:
+    post:
+      summary: ''
+      operationId: postApiDataGetUser
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userIdentifier:
+                  type: string
+                  description: ''
+                  example: velit
+              required:
+                - userIdentifier
+      security: []
+  /api/data/poaRequest:
+    post:
+      summary: ''
+      operationId: postApiDataPoaRequest
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userIdentifier:
+                  type: string
+                  description: ''
+                  example: corrupti
+                signEmail:
+                  type: string
+                  description: ''
+                  example: malachi.ryan@example.net
+                signFirstName:
+                  type: string
+                  description: ''
+                  example: ratione
+                signLastName:
+                  type: string
+                  description: ''
+                  example: quia
+                signAddress:
+                  type: string
+                  description: ''
+                  example: et
+                signCity:
+                  type: string
+                  description: ''
+                  example: nobis
+                signState:
+                  type: string
+                  description: ''
+                  example: est
+                signZip:
+                  type: string
+                  description: ''
+                  example: sit
+                signTaxid:
+                  type: string
+                  description: ''
+                  example: quia
+                signBusname:
+                  type: string
+                  description: ''
+                  example: omnis
+                signTradename:
+                  type: string
+                  description: ''
+                  example: enim
+                witnessEmail:
+                  type: string
+                  description: ''
+                  example: hiram.crona@example.com
+                witnessFirstName:
+                  type: string
+                  description: ''
+                  example: qui
+                witnessLastName:
+                  type: string
+                  description: ''
+                  example: provident
+                "coSignEmail\t":
+                  type: string
+                  description: ''
+                  example: explicabo
+                coSignFirstName:
+                  type: string
+                  description: ''
+                  example: provident
+                coSignLastName:
+                  type: string
+                  description: ''
+                  example: possimus
+              required:
+                - userIdentifier
+                - signEmail
+                - signFirstName
+                - signLastName
+                - signAddress
+                - signCity
+                - signState
+                - signZip
+      security: []
+  /api/data/getCustomerTickets:
+    post:
+      summary: ''
+      operationId: postApiDataGetCustomerTickets
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: integer
+                  description: ''
+                  example: 15
+                pageNumber:
+                  type: integer
+                  description: ''
+                  example: 16
+              required:
+                - userId
+      security: []
+  /api/data/getTicketInformation:
+    post:
+      summary: ''
+      operationId: postApiDataGetTicketInformation
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: integer
+                  description: ''
+                  example: 9
+                pageNumber:
+                  type: integer
+                  description: ''
+                  example: 13
+              required:
+                - userId
+                - pageNumber
+      security: []
+  /api/data/createUserBondApplication:
+    post:
+      summary: ''
+      operationId: postApiDataCreateUserBondApplication
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userIdentifier:
+                  type: string
+                  description: ''
+                  example: laborum
+                firstname:
+                  type: string
+                  description: ''
+                  example: aut
+                lastname:
+                  type: string
+                  description: ''
+                  example: aut
+                phone:
+                  type: string
+                  description: ''
+                  example: cupiditate
+                busname:
+                  type: string
+                  description: ''
+                  example: delectus
+                tradename:
+                  type: string
+                  description: ''
+                  example: adipisci
+                yearsInBusiness:
+                  type: integer
+                  description: ''
+                  example: 18
+                physicalAddress:
+                  type: string
+                  description: ''
+                  example: veritatis
+                physicalCity:
+                  type: string
+                  description: ''
+                  example: dolorem
+                physicalCountry:
+                  type: string
+                  description: ''
+                  example: ut
+                physicalState:
+                  type: string
+                  description: ''
+                  example: cum
+                physicalZip:
+                  type: string
+                  description: ''
+                  example: voluptas
+                mailingAddress:
+                  type: string
+                  description: ''
+                  example: quia
+                mailingCity:
+                  type: string
+                  description: ''
+                  example: fuga
+                mailingCountry:
+                  type: string
+                  description: ''
+                  example: ullam
+                mailingState:
+                  type: string
+                  description: ''
+                  example: accusamus
+                mailingZip:
+                  type: string
+                  description: ''
+                  example: fugiat
+                isBondOnFile:
+                  type: integer
+                  description: ''
+                  example: 10
+                isTerminationSent:
+                  type: integer
+                  description: ''
+                  example: 14
+                terminationDate:
+                  type: string
+                  description: 'Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+                  example: '2023-06-13'
+                hasSuretyLoss:
+                  type: integer
+                  description: ''
+                  example: 14
+                hasPrincipalSanctions:
+                  type: integer
+                  description: ''
+                  example: 9
+                merchandiseDesc:
+                  type: string
+                  description: ''
+                  example: fuga
+                manufacturerCountries:
+                  type: string
+                  description: ''
+                  example: nisi
+                hasCountervailingDuties:
+                  type: integer
+                  description: ''
+                  example: 3
+                requireReconciliationRider:
+                  type: integer
+                  description: ''
+                  example: 4
+                valueMerchandiseImportedLast12Months:
+                  type: integer
+                  description: ''
+                  example: 16
+                estimatedTaxesLast12Months:
+                  type: integer
+                  description: ''
+                  example: 14
+                numberOfEntriesLast12Months:
+                  type: integer
+                  description: ''
+                  example: 5
+                valueMerchandiseImportedNext12Months:
+                  type: integer
+                  description: ''
+                  example: 9
+                estimatedTaxesNext12Months:
+                  type: integer
+                  description: ''
+                  example: 6
+                numberOfEntriesNext12Months:
+                  type: integer
+                  description: ''
+                  example: 2
+              required:
+                - userIdentifier
+      security: []
+  /api/data/saveUserBondReference:
+    post:
+      summary: ''
+      operationId: postApiDataSaveUserBondReference
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: integer
+                  description: ''
+                  example: 7
+                bondReferenceNumber:
+                  type: string
+                  description: ''
+                  example: eum
+                bondExpiration:
+                  type: string
+                  description: 'Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+                  example: '2023-06-13'
+              required:
+                - userId
+      security: []
+  /api/data/attachUserDocument:
+    post:
+      summary: ''
+      operationId: postApiDataAttachUserDocument
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: 'Must be a file.'
+                userIdentifier:
+                  type: string
+                  description: ''
+                  example: laboriosam
+                documentDescription:
+                  type: string
+                  description: ''
+                  example: laboriosam
+              required:
+                - file
+                - userIdentifier
+      security: []
+  /api/data/getImportEstimate:
+    post:
+      summary: ''
+      operationId: postApiDataGetImportEstimate
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                shipping_method:
+                  type: integer
+                  description: 'Shipping Method:<br/>1 - Truck <br/> 2 - Ocean <br/> 3 - Air <br/> 4 - Courier'
+                  example: 10
+                shipment_value:
+                  type: string
+                  description: 'Must be between 0 and 999999.99 characters.'
+                  example: l
+                hts_code:
+                  type: string
+                  description: ''
+                  example: facilis
+                quantity:
+                  type: integer
+                  description: ''
+                  example: 7
+                bond_type:
+                  type: String
+                  description: 'Bond Type:<br/>"S" - Single Entry <br/>"A" - Annual'
+                  example: occaecati
+              required:
+                - shipping_method
+                - shipment_value
+                - hts_code
+                - quantity
+                - bond_type
+      security: []
+  /api/data/getEstimate:
+    post:
+      summary: ''
+      operationId: postApiDataGetEstimate
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                estimateGuid:
+                  type: string
+                  description: ''
+                  example: perferendis
+              required:
+                - estimateGuid
+      security: []
+  /api/data/lookupHTSCode:
+    post:
+      summary: ''
+      operationId: postApiDataLookupHTSCode
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hts_code:
+                  type: string
+                  description: ''
+                  example: dicta
+              required:
+                - hts_code
+      security: []
+  /api/data/searchHTSCode:
+    post:
+      summary: ''
+      operationId: postApiDataSearchHTSCode
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                search:
+                  type: string
+                  description: ''
+                  example: qui
+              required:
+                - search
+      security: []
+  /api/data/getHTSCodeRequirement:
+    post:
+      summary: ''
+      operationId: postApiDataGetHTSCodeRequirement
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hts_code:
+                  type: string
+                  description: ''
+                  example: beatae
+              required:
+                - hts_code
+      security: []
+  /api/data/poaReset:
+    post:
+      summary: ''
+      operationId: postApiDataPoaReset
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userIdentifier:
+                  type: string
+                  description: ''
+                  example: suscipit
+              required:
+                - userIdentifier
+      security: []
+  /api/data/saveAffiliatePoa:
+    post:
+      summary: ''
+      operationId: postApiDataSaveAffiliatePoa
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                queryString:
+                  type: string
+                  description: ''
+                  example: voluptas
+                affiliateUserIdentifier:
+                  type: string
+                  description: ''
+                  example: est
+              required:
+                - queryString
+                - affiliateUserIdentifier
+      security: []
+  /api/data/updateAffiliatePoa:
+    post:
+      summary: ''
+      operationId: postApiDataUpdateAffiliatePoa
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Token
+          description: ''
+          example: 'string required'
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                AffiliatePoaLogId:
+                  type: integer
+                  description: ''
+                  example: 19
+                Response:
+                  type: string
+                  description: ''
+                  example: cupiditate
+              required:
+                - AffiliatePoaLogId
+                - Response
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
